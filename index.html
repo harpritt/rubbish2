@@ -28,20 +28,19 @@
                     $('#result').html("");
 
                     OAuth.popup('tumblr')
-                        .done(function (r) {
-                            // the access_token is available via r.access_token
-                            // but the http functions automagically wrap the jquery calls
-                            r.get('/likes')
-                            .done(function(data) {
-                                $('#result').html("facebook: Hello, " + data + " !");
-                            })
-                            .fail(function( jqXHR, textStatus, errorThrown) {
-                                $('#result').html("req error: " + textStatus);
-                            });
-                        })
-                        .fail(function (e) {
-                            $('#result').html('error: ' + e.message);
-                        });
+					.done(function(result) {
+					    result.get('/me')
+					    .done(function (response) {
+					        //this will display "John Doe" in the console
+					        console.log(response.name);
+					    })
+					    .fail(function (err) {
+					        //handle error with err
+					    });
+					})
+					.fail(function (err) {
+					    //handle error with err
+					});
                 });
             });
         </script>
