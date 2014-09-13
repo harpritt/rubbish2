@@ -29,13 +29,13 @@
 
 
 					OAuth.popup('tumblr').done(function(result) {
-					    console.log(result)
+					    console.log(result);
 					    result.me().done(function(data) {
 						    // do something with `data`, e.g. print data.name
-						     $('#result').html(data.name);
+						     $('#result').html('jhhj'+data.name);
 							})
 
-					})
+					});
                 });
             });
         </script>
