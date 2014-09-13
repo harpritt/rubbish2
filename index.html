@@ -30,8 +30,11 @@
 
 					OAuth.popup('tumblr').done(function(result) {
 					    console.log(result)
-					    alert(result);
-					    $('#result').html(result);
+					    result.me().done(function(data) {
+						    // do something with `data`, e.g. print data.name
+						     $('#result').html(data.name);
+							})
+
 					})
                 });
             });
