@@ -27,20 +27,11 @@
                 $('#tumblr-connect').on('touchstart', function() {
                     $('#result').html("");
 
-                    OAuth.popup('tumblr')
-					.done(function(result) {
-					    result.get('/me')
-					    .done(function (response) {
-					        //this will display "John Doe" in the console
-					        console.log(response.name);
-					    })
-					    .fail(function (err) {
-					        //handle error with err
-					    });
+                    OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA')
+					OAuth.popup('tumblr').done(function(result) {
+					    console.log(result)
+					    $('#result').html(result);
 					})
-					.fail(function (err) {
-					    //handle error with err
-					});
                 });
             });
         </script>
