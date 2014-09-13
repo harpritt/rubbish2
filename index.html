@@ -31,13 +31,16 @@
                         .done(function (r) {
                             // the access_token is available via r.access_token
                             // but the http functions automagically wrap the jquery calls
-                            r.get('/me')
-                            .done(function(data) {
-                                $('#result').html("facebook: Hello, " + data.name + " !");
-                            })
-                            .fail(function( jqXHR, textStatus, errorThrown) {
-                                $('#result').html("req error: " + textStatus);
-                            });
+                            result.me()
+							    .done(function (user_info) {
+							        // user_info contains the user information (e.g. user_info.email, or user_info.avatar)
+							        // user_info.raw contains the original response
+							         $('#result').html("facebook: Hello, " + user_info + " !");
+							    })
+							    .fail(function (error) {
+							        // handle errors here
+							         $('#result').html("facebook: Hello, " + error + " !");
+    							);
                         })
                         .fail(function (e) {
                             $('#result').html('error: ' + e.message);
