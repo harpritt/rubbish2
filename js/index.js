@@ -72,6 +72,7 @@ var app = {
                 });
         		$('#result').text(JSON.stringify(imgs));
         		offset += limit;
+        		alert(offset-limit<totalLikes);
 			} while (offset-limit<totalLikes);
         	
         	
