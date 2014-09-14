@@ -61,7 +61,7 @@ var app = {
 					imgs.push(posts[int].photos[0].original_size.url);
 				}
                 alert(JSON.stringify(imgs));
-                $('#result').html(JSON.stringify(imgs));
+                $('#result').text(JSON.stringify(imgs));
             })
             .fail(function (err) {
                 alert('error');
