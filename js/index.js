@@ -41,7 +41,7 @@ var app = {
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
-            	alert(JSON.stringify(posts[0]).original_size);
+            	alert(JSON.stringify(posts[0].original_size));
             	//var imgs = [];
             	//var imgs2 = [];
             	
