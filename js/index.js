@@ -68,7 +68,8 @@ var app = {
                     .fail(function (err) {
                         alert('error');
                     });
-            		$('#result').text(JSON.stringify(imgs));
+            		alert(JSON.stringify(imgs));
+            		//$('#result').text(JSON.stringify(imgs));
             		offset += limit;
             		
     			} while (offset-limit<totalLikes);
