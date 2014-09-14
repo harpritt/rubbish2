@@ -40,7 +40,11 @@ var app = {
         	result.get('/v2/user/likes')
             .done(function (response) {
                 //this will display "John Doe" in the console
-                alert(JSON.stringify(response));
+                var posts = response.liked_posts;
+                for (var int = 0; int < posts.length; int++) {
+					var post = posts[int];
+					alert(post);
+				}
             })
             .fail(function (err) {
                 alert('error');
