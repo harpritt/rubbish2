@@ -36,8 +36,8 @@ var app = {
         app.receivedEvent('deviceready');
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
         OAuth.popup('tumblr').done(function(result) {
-            console.log(result);
-            alert("result " + JSON.stringify(result));
+           
+            alert("result " + result.oauth_token);
             // do some stuff with result
         });
     },
