@@ -70,7 +70,8 @@ var app = {
                     alert('error');
                 });
         		$('#result').text(JSON.stringify(imgs));
-			} while (offset<totalLikes);
+        		offset += limit;
+			} while (offset-limit<totalLikes);
         	
         	
         	
