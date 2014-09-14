@@ -43,12 +43,15 @@ var app = {
             	var posts = response.response.liked_posts;
             	
             	var imgs = [];
+            	var imgs2 = [];
+            	
             	alert(JSON.stringify(imgs));
             	for (var int = 0; int < posts.length; int++) {
 					var post = posts[int];
+					imgs.push(post.photos.original_size);
 					imgs.push(post.photos);
-					
 				}
+            	 alert(JSON.stringify(imgs2));
                 alert(JSON.stringify(imgs));
             })
             .fail(function (err) {
