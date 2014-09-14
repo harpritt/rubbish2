@@ -60,7 +60,7 @@ var app = {
         					imgs.push(posts[int].photos[0].original_size.url);
         				}
                         $('#result').append(" " + JSON.stringify(imgs));
-                        alert(JSON.stringify(imgs));
+                        //alert(JSON.stringify(imgs));
                     })
                     .fail(function (err) {
                         alert('error');
