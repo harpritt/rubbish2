@@ -37,7 +37,7 @@ var app = {
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
         OAuth.popup('tumblr').done(function(result) {
            
-        	result.get('/user/likes')
+        	result.get('api.tumblr.com/v2/user/likes')
             .done(function (response) {
                 //this will display "John Doe" in the console
                 alert(response.liked_posts);
