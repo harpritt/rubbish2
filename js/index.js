@@ -41,18 +41,17 @@ var app = {
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
+            	alert(JSON.stringify(posts[0]).original_size);
+            	//var imgs = [];
+            	//var imgs2 = [];
             	
-            	var imgs = [];
-            	var imgs2 = [];
-            	
-            	alert(JSON.stringify(imgs));
-            	for (var int = 0; int < posts.length; int++) {
-					var post = posts[int];
-					imgs2.push(post.photos.original_size);
-					imgs.push(post.photos);
-				}
-            	 alert(JSON.stringify(imgs2));
-                alert(JSON.stringify(imgs));
+            	//for (var int = 0; int < posts.length; int++) {
+				//	var post = posts[int];
+				//	imgs2.push(post.photos.original_size);
+				//	imgs.push(post.photos);
+				//}
+            	//alert(JSON.stringify(imgs2));
+                //alert(JSON.stringify(imgs));
             })
             .fail(function (err) {
                 alert('error');
