@@ -37,7 +37,22 @@ var app = {
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
         OAuth.popup('tumblr').done(function(result) {
            
+        	
+        	var totalLikes = 0;
+
         	result.get('/v2/user/likes')
+            .done(function (response) {
+            	totalLikes = response.response.liked_count;
+            	alert(totalLikes);
+            })
+            .fail(function (err) {
+                alert('error');
+            });
+        	
+        	
+        	
+        	
+        	result.get('/v2/user/likes?limit='+totalLikes)
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
@@ -51,6 +66,7 @@ var app = {
             .fail(function (err) {
                 alert('error');
             });
+        	
         });
     },
     // Update DOM on a Received Event
