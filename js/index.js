@@ -50,9 +50,9 @@ var app = {
             });
         	
         	
+        	$('#result').html("");
         	
-        	
-        	result.get('/v2/user/likes?offset=1000&limit='+5)
+        	result.get('/v2/user/likes?&limit=200')
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
@@ -61,6 +61,7 @@ var app = {
 					imgs.push(posts[int].photos[0].original_size.url);
 				}
                 alert(JSON.stringify(imgs));
+                $('#result').html(JSON.stringify(imgs));
             })
             .fail(function (err) {
                 alert('error');
