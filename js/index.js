@@ -52,7 +52,7 @@ var app = {
         	
         	$('#result').html("");
         	
-        	result.get('/v2/user/likes?limit='+ totalLikes)
+        	result.get('/v2/user/likes?limit=500')
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
