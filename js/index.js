@@ -59,7 +59,7 @@ var app = {
                     	for (var int = 0; int < posts.length; int++) {				
         					imgs.push(posts[int].photos[0].original_size.url);
         				}
-                        $('#result').text($('#result').text +" " + JSON.stringify(imgs));
+                        $('#result').append(" " + JSON.stringify(imgs));
                         alert(JSON.stringify(imgs));
                     })
                     .fail(function (err) {
