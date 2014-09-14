@@ -14,17 +14,12 @@
 
 
 	<script type="text/javascript">
-
-		OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
-		OAuth.popup('tumblr')
-	    .done(function(result) {
-	      //use result.access_token in your API request 
-	      //or use result.get|post|put|del|patch|me methods (see below)
-	    	alert(JSON.stringify(result));
-	    })
-	    .fail(function (err) {
-	    	alert(JSON.stringify(result));
-	    });
+	OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA')
+	OAuth.popup('tumblr').done(function(result) {
+	    console.log(result)
+	    alert('sdfdsf');
+	    // do some stuff with result
+	})
 	</script>
 </body>
 </html>
