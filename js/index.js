@@ -37,8 +37,14 @@ var app = {
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
         OAuth.popup('tumblr').done(function(result) {
            
-            alert("result " + result.oauth_token);
-            // do some stuff with result
+        	result.get('/user/likes')
+            .done(function (response) {
+                //this will display "John Doe" in the console
+                alert(response.liked_posts);
+            })
+            .fail(function (err) {
+                alert('error');
+            });
         });
     },
     // Update DOM on a Received Event
