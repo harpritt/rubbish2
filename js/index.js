@@ -65,6 +65,7 @@ var app = {
                 	for (var int = 0; int < posts.length; int++) {				
     					imgs.push(posts[int].photos[0].original_size.url);
     				}
+                	alert(JSON.stringify(imgs));
                 })
                 .fail(function (err) {
                     alert('error');
