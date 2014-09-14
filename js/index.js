@@ -52,7 +52,6 @@ var app = {
             	
             	var limit = 30;
             	var offset = 0;
-            	var imgs = [];
             	do {
             		var url = '/v2/user/likes?offset='+offset+'&limit='+limit;
             		result.get(url)
@@ -63,13 +62,14 @@ var app = {
                     	for (var int = 0; int < posts.length; int++) {				
         					imgs.push(posts[int].photos[0].original_size.url);
         				}
+                    	$('#result').text(JSON.stringify(imgs));
                     	
                     })
                     .fail(function (err) {
                         alert('error');
                     });
-            		alert(JSON.stringify(imgs));
-            		//$('#result').text(JSON.stringify(imgs));
+            		
+            		//
             		offset += limit;
             		
     			} while (offset-limit<totalLikes);
