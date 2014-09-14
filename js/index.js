@@ -37,6 +37,7 @@ var app = {
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
         OAuth.popup('tumblr').done(function(result) {
             console.log(result);
+            alert("result" + result);
             // do some stuff with result
         });
     },
