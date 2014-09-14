@@ -50,7 +50,7 @@ var app = {
             
             	$('#result').html("");
             	
-            	var limit = 20;
+            	var limit = 200;
             	var offset = 0;
             	var imgs = [];
             	do {
@@ -63,16 +63,16 @@ var app = {
                     	for (var int = 0; int < posts.length; int++) {				
         					imgs.push(posts[int].photos[0].original_size.url);
         				}
-                    	alert(JSON.stringify(imgs));
+                    	//alert(JSON.stringify(imgs));
                     })
                     .fail(function (err) {
                         alert('error');
                     });
-            		$('#result').text(JSON.stringify(imgs));
+            		
             		offset += limit;
-            		alert(offset-limit<totalLikes);
+            		
     			} while (offset-limit<totalLikes);
-            
+            	$('#result').text(JSON.stringify(imgs));
             
             
             
