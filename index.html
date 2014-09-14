@@ -30,7 +30,7 @@
 
 					OAuth.popup('tumblr').done(function(result) {
 					    console.log(result);
-					    result.get('likes').done(function(data,data2) {
+					    result.get('/likes').done(function(data,data2) {
 						    // do something with `data`, e.g. print data.name
 						     $('#result').html('jhhj'+data);
 							})
