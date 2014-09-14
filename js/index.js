@@ -52,11 +52,10 @@ var app = {
         	
         	
         	
-        	result.get('/v2/user/likes?limit='+totalLikes)
+        	result.get('/v2/user/likes?offset=950&limit='+50)
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
-            	alert(JSON.stringify());
             	var imgs = [];
             	for (var int = 0; int < posts.length; int++) {				
 					imgs.push(posts[int].photos[0].original_size.url);
