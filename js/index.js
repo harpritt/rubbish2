@@ -34,7 +34,11 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        alert('dfasdfasd');
+        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
+        OAuth.popup('tumblr').done(function(result) {
+            console.log(result);
+            // do some stuff with result
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
