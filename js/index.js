@@ -44,34 +44,38 @@ var app = {
             .done(function (response) {
             	totalLikes = response.response.liked_count;
             	alert(totalLikes);
+            	
+            	$('#result').html("");
+            	
+            	var limit = 20;
+            	var offset = 0;
+            	alert('dsdf' + (limit + offset < totalLikes));
+            	while (limit + offset < totalLikes) {
+            		result.get('/v2/user/likes?offset='+offset)
+                    .done(function (response) {
+                        //this will display "John Doe" in the console
+                    	var posts = response.response.liked_posts;
+                    	var imgs = [];
+                    	for (var int = 0; int < posts.length; int++) {				
+        					imgs.push(posts[int].photos[0].original_size.url);
+        				}
+                        $('#result').text($('#result').text +" " + JSON.stringify(imgs));
+                        alert(JSON.stringify(imgs));
+                    })
+                    .fail(function (err) {
+                        alert('error');
+                    });
+            		offset += limit;
+    			}
+            	
+            	
+            	
             })
             .fail(function (err) {
                 alert('error');
             });
         	
         	
-        	$('#result').html("");
-        	
-        	var limit = 20;
-        	var offset = 0;
-        	alert('dsdf' + (limit + offset < totalLikes));
-        	while (limit + offset < totalLikes) {
-        		result.get('/v2/user/likes?offset=20&limit=20')
-                .done(function (response) {
-                    //this will display "John Doe" in the console
-                	var posts = response.response.liked_posts;
-                	var imgs = [];
-                	for (var int = 0; int < posts.length; int++) {				
-    					imgs.push(posts[int].photos[0].original_size.url);
-    				}
-                    $('#result').text($('#result').text +" " + JSON.stringify(imgs));
-                    alert(JSON.stringify(imgs));
-                })
-                .fail(function (err) {
-                    alert('error');
-                });
-        		offset += limit;
-			}
         	
         	
         });
