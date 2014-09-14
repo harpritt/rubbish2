@@ -52,7 +52,7 @@ var app = {
         	
         	$('#result').html("");
         	
-        	result.get('/v2/user/likes?offest=950&limit=2')
+        	result.get('/v2/user/likes?offset=990&limit=1005')
             .done(function (response) {
                 //this will display "John Doe" in the console
             	var posts = response.response.liked_posts;
