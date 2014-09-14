@@ -54,6 +54,7 @@ var app = {
         	
         	var limit = 20;
         	var offset = 0;
+        	alert('dsdf' + (limit + offset < totalLikes));
         	while (limit + offset < totalLikes) {
         		result.get('/v2/user/likes?offset=20&limit=20')
                 .done(function (response) {
