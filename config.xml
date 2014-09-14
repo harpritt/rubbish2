@@ -66,6 +66,7 @@
     <!--
         <gap:plugin name="com.phonegap.plugins.barcodescanner" />
     -->
+        <gap:plugin name="com.oauthio.plugins.oauthio" version="0.2.4" />
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />
