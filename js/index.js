@@ -54,14 +54,14 @@ var app = {
         	
         	var limit = 20;
         	var offset = 0;
-        	
+        	var imgs = [];
         	do {
         		var url = '/v2/user/likes?offset='+offset+'&limit='+limit;
         		result.get(url)
                 .done(function (response) {
                     //this will display "John Doe" in the console
                 	var posts = response.response.liked_posts;
-                	var imgs = [];
+                	
                 	for (var int = 0; int < posts.length; int++) {				
     					imgs.push(posts[int].photos[0].original_size.url);
     				}
@@ -69,9 +69,10 @@ var app = {
                 .fail(function (err) {
                     alert('error');
                 });
+        		$('#result').text(JSON.stringify(imgs));
 			} while (offset<totalLikes);
         	
-        	$('#result').text(JSON.stringify(imgs));
+        	
         	
         });
     },
