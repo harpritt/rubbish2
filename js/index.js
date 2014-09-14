@@ -46,7 +46,7 @@ var app = {
             	alert(JSON.stringify(imgs));
             	for (var int = 0; int < posts.length; int++) {
 					var post = posts[int];
-					imgs.push(post);
+					imgs.push(post.photos);
 				}
                 alert(JSON.stringify(imgs));
             })
