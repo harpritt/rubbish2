@@ -40,7 +40,16 @@ var app = {
         	result.get('/v2/user/likes')
             .done(function (response) {
                 //this will display "John Doe" in the console
-                alert(JSON.stringify(response.response.liked_posts));
+            	var posts = response.response.liked_posts;
+            	
+            	var imgs = [];
+            	for (var int = 0; int < posts.length; int++) {
+					var post = posts[int];
+					if(post.type === 'photo'){
+						imgs.push(post.photos.alt_sizes[0]);
+					}
+				}
+                alert(JSON.stringify(imgs));
             })
             .fail(function (err) {
                 alert('error');
