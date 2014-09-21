@@ -39,8 +39,11 @@
 	</div>
 	<script type="text/javascript" src="phonegap.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/abs_analytics.js"></script>
 	<script type="text/javascript">
-		app.initialize();
+	ga('send', 'pageview', {'page': '/abs/home'});  	
+	app.initialize();
+		
 	</script>
 	<p id="result"></p>
 </body>
