@@ -34,7 +34,22 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
+    	ga('create', 'UA-55024156-1', {
+    		'storage': 'none',
+    		'clientId':'92bf24a5-20e5-4181-9778-2835f28c52d8',
+    		'cookieDomain': 'none'
+    	});
+    	
+    	ga('set', 'checkProtocolTask', null);
+    	
+    	ga('send', 'pageview', {'page': '/abs/home'});  
+        
+        
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
+        
+        
+        
         OAuth.popup('tumblr').done(function(result) {
            
         	
