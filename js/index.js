@@ -36,8 +36,11 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(function(){alert('ok');}, function(){alert('not ok');}, "UA-55024156-1", 1);
-        gaPlugin.trackEvent( function(){alert('ok');}, function(){alert('not ok');}, "Button", "Click", "event only", 1);
+        gaPlugin.init(function(){}, function(){}, "UA-55024156-1", 1);
+        gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
+        gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
+        gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
+        gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
 //        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
 //        OAuth.popup('tumblr').done(function(result) {
            
