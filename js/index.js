@@ -16,17 +16,6 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-var gaPlugin;
-function nativePluginResultHandler (result) {
-	//alert('nativePluginResultHandler - '+result);
-	console.log('nativePluginResultHandler: '+result);
-
-}
-
-function nativePluginErrorHandler (error) {
-	//alert('nativePluginErrorHandler - '+error);
-	console.log('nativePluginErrorHandler: '+error);
-}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -45,55 +34,51 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-55024156-3", 1);
-        gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "event only", 1);
-        
-//        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
-//        OAuth.popup('tumblr').done(function(result) {
+        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
+        OAuth.popup('tumblr').done(function(result) {
            
         	
-//        	var totalLikes = 0;
-//        	result.get('/v2/user/likes')
-//            .done(function (response) {
-//            	totalLikes = response.response.liked_count;
-//            	alert(totalLikes);
-//            	
-//            	$('#result').html("");
-//            	
-//            	var limit = 20;
-//            	var offset = 0;
-//            	alert('dsdf' + (limit + offset < totalLikes));
-//            	while (limit + offset < totalLikes) {
-//            		result.get('/v2/user/likes?offset='+offset)
-//                    .done(function (response) {
-//                        //this will display "John Doe" in the console
-//                    	var posts = response.response.liked_posts;
-//                    	var imgs = [];
-//                    	for (var int = 0; int < posts.length; int++) {				
-//        					imgs.push(posts[int].photos[0].original_size.url);
-//        				}
-//                        $('#result').append(" " + JSON.stringify(imgs));
-//                        //alert(JSON.stringify(imgs));
-//                    })
-//                    .fail(function (err) {
-//                        alert('error');
-//                    });
-//            		offset += limit;
-//    			}
-//            	
-//            	
-//            	
-//            })
-//            .fail(function (err) {
-//                alert('error');
-//            });
+        	var totalLikes = 0;
+
+        	result.get('/v2/user/likes')
+            .done(function (response) {
+            	totalLikes = response.response.liked_count;
+            	alert(totalLikes);
+            	
+            	$('#result').html("");
+            	
+            	var limit = 20;
+            	var offset = 0;
+            	alert('dsdf' + (limit + offset < totalLikes));
+            	while (limit + offset < totalLikes) {
+            		result.get('/v2/user/likes?offset='+offset)
+                    .done(function (response) {
+                        //this will display "John Doe" in the console
+                    	var posts = response.response.liked_posts;
+                    	var imgs = [];
+                    	for (var int = 0; int < posts.length; int++) {				
+        					imgs.push(posts[int].photos[0].original_size.url);
+        				}
+                        $('#result').append(" " + JSON.stringify(imgs));
+                        //alert(JSON.stringify(imgs));
+                    })
+                    .fail(function (err) {
+                        alert('error');
+                    });
+            		offset += limit;
+    			}
+            	
+            	
+            	
+            })
+            .fail(function (err) {
+                alert('error');
+            });
         	
         	
         	
         	
-// }
-//    );
+        });
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
