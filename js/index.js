@@ -36,7 +36,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(function(){}, function(){}, "UA-55024156-1", 1);
+        gaPlugin.init(function(){}, function(){}, "UA-55024156-2", 1);
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
