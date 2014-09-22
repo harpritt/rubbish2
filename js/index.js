@@ -43,7 +43,6 @@ var app = {
            
         	
         	var totalLikes = 0;
-
         	result.get('/v2/user/likes')
             .done(function (response) {
             	totalLikes = response.response.liked_count;
