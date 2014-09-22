@@ -38,45 +38,45 @@ var app = {
         gaPlugin = window.plugins.gaPlugin;
         gaPlugin.init(function(){alert('ok');}, function(){alert('not ok');}, "UA-55024156-1", 1);
         gaPlugin.trackEvent( function(){alert('ok');}, function(){alert('not ok');}, "Button", "Click", "event only", 1);
-        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
-        OAuth.popup('tumblr').done(function(result) {
+//        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
+//        OAuth.popup('tumblr').done(function(result) {
            
         	
-        	var totalLikes = 0;
-        	result.get('/v2/user/likes')
-            .done(function (response) {
-            	totalLikes = response.response.liked_count;
-            	alert(totalLikes);
-            	
-            	$('#result').html("");
-            	
-            	var limit = 20;
-            	var offset = 0;
-            	alert('dsdf' + (limit + offset < totalLikes));
-            	while (limit + offset < totalLikes) {
-            		result.get('/v2/user/likes?offset='+offset)
-                    .done(function (response) {
-                        //this will display "John Doe" in the console
-                    	var posts = response.response.liked_posts;
-                    	var imgs = [];
-                    	for (var int = 0; int < posts.length; int++) {				
-        					imgs.push(posts[int].photos[0].original_size.url);
-        				}
-                        $('#result').append(" " + JSON.stringify(imgs));
-                        //alert(JSON.stringify(imgs));
-                    })
-                    .fail(function (err) {
-                        alert('error');
-                    });
-            		offset += limit;
-    			}
-            	
-            	
-            	
-            })
-            .fail(function (err) {
-                alert('error');
-            });
+//        	var totalLikes = 0;
+//        	result.get('/v2/user/likes')
+//            .done(function (response) {
+//            	totalLikes = response.response.liked_count;
+//            	alert(totalLikes);
+//            	
+//            	$('#result').html("");
+//            	
+//            	var limit = 20;
+//            	var offset = 0;
+//            	alert('dsdf' + (limit + offset < totalLikes));
+//            	while (limit + offset < totalLikes) {
+//            		result.get('/v2/user/likes?offset='+offset)
+//                    .done(function (response) {
+//                        //this will display "John Doe" in the console
+//                    	var posts = response.response.liked_posts;
+//                    	var imgs = [];
+//                    	for (var int = 0; int < posts.length; int++) {				
+//        					imgs.push(posts[int].photos[0].original_size.url);
+//        				}
+//                        $('#result').append(" " + JSON.stringify(imgs));
+//                        //alert(JSON.stringify(imgs));
+//                    })
+//                    .fail(function (err) {
+//                        alert('error');
+//                    });
+//            		offset += limit;
+//    			}
+//            	
+//            	
+//            	
+//            })
+//            .fail(function (err) {
+//                alert('error');
+//            });
         	
         	
         	
