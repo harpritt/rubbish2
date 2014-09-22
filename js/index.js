@@ -17,6 +17,16 @@
  * under the License.
  */
 var gaPlugin;
+function nativePluginResultHandler (result) {
+	//alert('nativePluginResultHandler - '+result);
+	console.log('nativePluginResultHandler: '+result);
+
+}
+
+function nativePluginErrorHandler (error) {
+	//alert('nativePluginErrorHandler - '+error);
+	console.log('nativePluginErrorHandler: '+error);
+}
 var app = {
     // Application Constructor
     initialize: function() {
@@ -36,7 +46,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         gaPlugin = window.plugins.gaPlugin;
-        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-55024156-2", 1);
+        gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-55024156-3", 1);
         gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "event only", 1);
         
 //        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
