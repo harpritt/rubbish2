@@ -41,6 +41,9 @@ var app = {
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
         gaPlugin.trackEvent( function(){}, function(){}, "Button", "Click", "event only", 1);
+        
+        gaPlugin.trackPage( function(){}, function(){},"some.url.com");
+        
 //        OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
 //        OAuth.popup('tumblr').done(function(result) {
            
