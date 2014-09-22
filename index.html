@@ -7,54 +7,16 @@
 		<link rel="stylesheet" href="master.css" type="text/css" media="screen" title="no title">
 		
 	<script type="text/javascript" src="phonegap.js"></script>
-		<script type="text/javascript" src="GAPlugin.js"></script>
-		<script type="text/javascript">
-			var gaPlugin;
-		
-			function initialize() {
-    			document.addEventListener("deviceready", onDeviceReady, true);
-			}
-		
-			function onDeviceReady() {
-				gaPlugin = window.plugins.gaPlugin;        
-        
-				navigator.notification.confirm('GA_PLUGIN would like your permission to collect usage data. No personal or user identifiable data will be collected.', permissionCallback, 'Attention', 'Allow,Deny');
-			}
-		
-			function permissionCallback (button) {
-				if (button === 1)
-					gaPlugin.init(nativePluginResultHandler, nativePluginErrorHandler, "UA-55024156-4", 10);
-			}
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			function nativePluginResultHandler (result) {
-				//alert('nativePluginResultHandler - '+result);
-				console.log('nativePluginResultHandler: '+result);
+  ga('create', 'UA-55024156-3', 'auto');
+  ga('send', 'pageview');
 
-			}
-        
-			function nativePluginErrorHandler (error) {
-				//alert('nativePluginErrorHandler - '+error);
-				console.log('nativePluginErrorHandler: '+error);
-			}
-			
-			function TrackButtonClicked() {
-				gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "event only", 1);
-			}
-        
-			function VariableButtonClicked() {
-				gaPlugin.setVariable( nativePluginResultHandler, nativePluginErrorHandler, "favoriteColor", "Purple", 1);
-				gaPlugin.trackEvent( nativePluginResultHandler, nativePluginErrorHandler, "Button", "Click", "event with variable", 2);
-			}
-        
-			function PageButtonClicked() {
-				gaPlugin.trackPage( nativePluginResultHandler, nativePluginErrorHandler, "some.url.com");
-			}
-			
-			function goingAway() {
-				gaPlugin.exit(nativePluginResultHandler, nativePluginErrorHandler);
-			}
-			
-		</script>
+</script>
 
   </head>
   <body onload="initialize();" onunload="goingAway();" id="stage" class="theme">
