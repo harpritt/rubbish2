@@ -16,6 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+var gaPlugin;
 var app = {
     // Application Constructor
     initialize: function() {
@@ -34,22 +35,10 @@ var app = {
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
-        
-    	ga('create', 'UA-55024156-1', {
-    		'storage': 'none',
-    		'clientId':'92bf24a5-20e5-4181-9778-2835f28c52d8',
-    		'cookieDomain': 'none'
-    	});
-    	
-    	ga('set', 'checkProtocolTask', null);
-    	
-    	ga('send', 'pageview', {'page': '/abs/home'});  
-        
-        
+        gaPlugin = window.plugins.gaPlugin;
+        gaPlugin.init(function(){alert('ok');}, function(){alert('not ok');}, "UA-12345678-1", 10);
+        gaPlugin.trackEvent( function(){alert('ok');}, function(){alert('not ok');}, "Button", "Click", "event only", 1);
         OAuth.initialize('5Pl1ehruRjaz4Er7W5u05qyLlvA');
-        
-        
-        
         OAuth.popup('tumblr').done(function(result) {
            
         	
