@@ -41,7 +41,14 @@
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a" style="">
+<script type="text/javascript">
+updateScroll: function(e){
+    var el = $(e.currentTarget);
+    var offset = -$(".scrollerWrap").height() + $(el).height();
+    $(".scrollerWrap").scrollTo(el,{offset: offset});
+}
 
+</script>
 
   <div data-role="page" style="max-height: 440px; min-height: 454px;" class="type-home ui-page ui-page-theme-a ui-page-active" tabindex="0">
     <div class="ui-panel-wrapper">
@@ -74,7 +81,7 @@
               <p>Title</p>
               <input type="text" />
               <p>Somthing Else</p>
-              <input type="text" />
+              <input type="text" onfocus="updateScroll(this)"/>
               <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">OK</button>
             </div>
           </form>
@@ -99,7 +106,7 @@
             <p>Title</p>
             <input type="text" />
             <p>Somthing Else</p>
-            <input type="text" />
+            <input type="text" onfocus="updateScroll(this)"/>
             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Delete</a>
           </div>
