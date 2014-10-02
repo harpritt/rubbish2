@@ -1,45 +1,152 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
+<html class="ui-mobile">
 
-    http://www.apache.org/licenses/LICENSE-2.0
+<head>
+  <title>Page Title</title>
 
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+   <script type="text/javascript" src="phonegap.js"></script>  
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+  <style>
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    html,
+    .ui-mobile,
+    .ui-mobile body {
+      height: 435px;
+    }
+    .ui-mobile,
+    .ui-mobile .ui-page {
+      min-height: 435px;
+    }
+    .ui-content {
+      padding: 10px 15px 0px 15px;
+    }
+    .panel-content {
+      padding: 15px;
+    }
+    .ui-input-text input,
+    .ui-input-search input {
+      border-color: white;
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+
+<body class="ui-mobile-viewport ui-overlay-a" style="">
+
+
+  <div data-role="page" style="max-height: 440px; min-height: 454px;" class="type-home ui-page ui-page-theme-a ui-page-active" tabindex="0">
+    <div class="ui-panel-wrapper">
+      <div data-role="header" role="banner" class="ui-header ui-bar-inherit">
+        <h1 class="ui-title" role="heading" aria-level="1">Form Editor</h1>
+      </div>
+      <div>
+
+        <ul data-role="listview">
+          <li><a href="#rightpanel3">Question 1</a>
+          </li>
+          <li><a href="#rightpanel3">Another Question</a>
+          </li>
+          <li><a href="#rightpanel3">And another</a>
+          </li>
+
+        </ul>
+
+        <ul data-role="listview">
+          <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop">Question 1</a>
+          </li>
+          <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop">Another Question</a>
+          </li>
+          <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop">And another</a>
+          </li>
+        </ul>
+
+
+        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+          <form>
+            <div style="padding:10px 20px;">
+              <h3>Please sign in</h3>
+              <h3>Question Editor</h3>
+              <p>Title</p>
+              <input type="text" />
+              <p>Somthing Else</p>
+              <input type="text" />
+              <p>Title</p>
+              <input type="text" />
+              <p>Somthing Else</p>
+              <input type="text" />
+              <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">OK</button>
             </div>
+          </form>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        <p id="result"></p>
-    </body>
+
+        <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
+        <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
+          <div data-role="header" data-theme="a">
+            <h1>Delete Page?</h1>
+          </div>
+          <div role="main" class="ui-content">
+            <input type="text" />
+            <p>Somthing Else</p>
+            <input type="text" />
+            <p>Title</p>
+            <input type="text" />
+            <p>Somthing Else</p>
+            <input type="text" />
+            <input type="text" />
+            <p>Somthing Else</p>
+            <input type="text" />
+            <p>Title</p>
+            <input type="text" />
+            <p>Somthing Else</p>
+            <input type="text" />
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+            <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Delete</a>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+
+
+
+    <!-- rightpanel3  -->
+    <div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate">
+
+      <div class="ui-panel-inner">
+        <div class="panel-content">
+          <h3>Question Editor</h3>
+          <p>Title</p>
+          <input type="text" />
+          <p>Somthing Else</p>
+          <input type="text" />
+          <p>Title</p>
+          <input type="text" />
+          <p>Somthing Else</p>
+          <input type="text" />
+          <br />
+          <div class="panel-footer-buttons">
+            <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-delete ui-btn-icon-left  ui-shadow ui-corner-all" role="button">OK</a>
+            <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-delete ui-btn-icon-left  ui-shadow ui-corner-all" role="button">Cancel</a>
+          </div>
+
+        </div>
+      </div>
+      <!-- /content wrapper for padding -->
+
+    </div>
+    <!-- /rightpanel3 -->
+
+  </div>
+
+</body>
+
 </html>
