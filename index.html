@@ -9,7 +9,7 @@
  
   <script src="js/jquery-2.1.1.min.js"></script>
   <script src="js/jquery.mobile-1.4.4.min.js"></script>
-   <script type="text/javascript" src="phonegap.js"></script>  
+  <script type="text/javascript" src="phonegap.js"></script>  
   <style>
     html,
     body {
@@ -59,6 +59,8 @@
           </li>
 
         </ul>
+                      <p>Somthing Else</p>
+              <input type="text" />
 
         <ul data-role="listview">
           <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop">Question 1</a>
@@ -147,6 +149,13 @@
     <!-- /rightpanel3 -->
 
   </div>
+  <script type="text/javascript">
+$("#popupLogin input, #popupLogin textarea").on("focus", function () {
+    $("#popupLogin").popup("reposition", {
+        y: 0
+    });
+});
+</script>
 
 </body>
 
