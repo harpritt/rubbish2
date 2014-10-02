@@ -37,11 +37,6 @@
       background-color: white;
       color: black;
     }
-    
-    .scrolldiv
-    {
-    overflow-y: scroll
-    }
   </style>
 </head>
 
@@ -55,17 +50,7 @@
       </div>
       <div>
 
-        <ul data-role="listview">
-          <li><a href="#rightpanel3">Question 1</a>
-          </li>
-          <li><a href="#rightpanel3">Another Question</a>
-          </li>
-          <li><a href="#rightpanel3">And another</a>
-          </li>
 
-        </ul>
-                      <p>Somthing Else</p>
-              <input type="text" />
 
         <ul data-role="listview">
           <li><a href="#popupLogin" data-rel="popup" data-position-to="window" data-transition="pop">Question 1</a>
@@ -77,9 +62,9 @@
         </ul>
 
 
-        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all scrolldiv">
+        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
           <form>
-            <div class="scrolldiv" style="padding:10px 20px;">
+            <div style="padding:10px 20px;">
               <h3>Please sign in</h3>
               <h3>Question Editor</h3>
               <p>Title</p>
@@ -100,7 +85,7 @@
           <div data-role="header" data-theme="a">
             <h1>Delete Page?</h1>
           </div>
-          <div role="main" class="ui-content scrolldiv">
+          <div role="main" class="ui-content">
             <input type="text" />
             <p>Somthing Else</p>
             <input type="text" />
@@ -126,41 +111,10 @@
 
 
 
-    <!-- rightpanel3  -->
-    <div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate">
-
-      <div class="ui-panel-inner scrolldiv">
-        <div class="panel-content scrolldiv">
-          <h3>Question Editor</h3>
-          <p>Title</p>
-          <input type="text" />
-          <p>Somthing Else</p>
-          <input type="text" />
-          <p>Title</p>
-          <input type="text" />
-          <p>Somthing Else</p>
-          <input type="text" />
-          <br />
-          <div class="panel-footer-buttons">
-            <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-delete ui-btn-icon-left  ui-shadow ui-corner-all" role="button">OK</a>
-            <a href="#demo-links" data-rel="close" data-role="button" data-theme="a" data-icon="delete" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-delete ui-btn-icon-left  ui-shadow ui-corner-all" role="button">Cancel</a>
-          </div>
-
-        </div>
-      </div>
-      <!-- /content wrapper for padding -->
-
     </div>
     <!-- /rightpanel3 -->
 
   </div>
-  <script type="text/javascript">
-$("#popupLogin input, #popupLogin textarea").on("focus", function () {
-    $("#popupLogin").popup("reposition", {
-        y: 0
-    });
-});
-</script>
 
 </body>
 
