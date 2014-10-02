@@ -37,6 +37,11 @@
       background-color: white;
       color: black;
     }
+    
+    .scrolldiv
+    {
+    overflow-y: scroll
+    }
   </style>
 </head>
 
@@ -72,9 +77,9 @@
         </ul>
 
 
-        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all scrolldiv">
           <form>
-            <div style="padding:10px 20px;">
+            <div class="scrolldiv" style="padding:10px 20px;">
               <h3>Please sign in</h3>
               <h3>Question Editor</h3>
               <p>Title</p>
@@ -95,7 +100,7 @@
           <div data-role="header" data-theme="a">
             <h1>Delete Page?</h1>
           </div>
-          <div role="main" class="ui-content">
+          <div role="main" class="ui-content scrolldiv">
             <input type="text" />
             <p>Somthing Else</p>
             <input type="text" />
@@ -124,8 +129,8 @@
     <!-- rightpanel3  -->
     <div data-role="panel" id="rightpanel3" data-position="right" data-display="overlay" data-dismissible="true" data-theme="b" class="ui-panel ui-panel-position-right ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate">
 
-      <div class="ui-panel-inner">
-        <div class="panel-content">
+      <div class="ui-panel-inner scrolldiv">
+        <div class="panel-content scrolldiv">
           <h3>Question Editor</h3>
           <p>Title</p>
           <input type="text" />
