@@ -44,6 +44,8 @@
 <body class="ui-mobile-viewport ui-overlay-a" style="">
 <script type="text/javascript">
 updateScroll: function(e){
+	alert(e);
+	alert(e.currentTarget);
     var el = $(e.currentTarget);
     var offset = el.offset();
     var posY = offset.top - $(window).scrollTop();
