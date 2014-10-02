@@ -37,26 +37,11 @@
       background-color: white;
       color: black;
     }
-    
   </style>
 </head>
 
 <body class="ui-mobile-viewport ui-overlay-a" style="">
-<script type="text/javascript">
-updateScroll: function(e){
-	alert(e);
-	alert(e.currentTarget);
-    var el = $(e.currentTarget);
-    var offset = el.offset();
-    var posY = offset.top - $(window).scrollTop();
-    var posX = offset.left - $(window).scrollLeft();
-    //var offset = -$(".scrollerWrap").height() + $(el).height();
-    //$(".scrollerWrap").scrollTo(el,{offset: offset});
-    window.scrollTo(posX,posY)
-    alert(posX  + " "  + posY);
-}
 
-</script>
 
   <div data-role="page" style="max-height: 440px; min-height: 454px;" class="type-home ui-page ui-page-theme-a ui-page-active" tabindex="0">
     <div class="ui-panel-wrapper">
@@ -77,7 +62,7 @@ updateScroll: function(e){
         </ul>
 
 
-        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all scrollerWrap">
+        <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
           <form>
             <div style="padding:10px 20px;">
               <h3>Please sign in</h3>
@@ -89,14 +74,14 @@ updateScroll: function(e){
               <p>Title</p>
               <input type="text" />
               <p>Somthing Else</p>
-              <input type="text" onfocus="updateScroll(this)"/>
+              <input type="text" />
               <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">OK</button>
             </div>
           </form>
         </div>
 
         <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">Delete page...</a>
-        <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;" class="scrollerWrap">
+        <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
           <div data-role="header" data-theme="a">
             <h1>Delete Page?</h1>
           </div>
@@ -114,7 +99,7 @@ updateScroll: function(e){
             <p>Title</p>
             <input type="text" />
             <p>Somthing Else</p>
-            <input type="text" onfocus="updateScroll(this)"/>
+            <input type="text" />
             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
             <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Delete</a>
           </div>
